@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Box, CircularProgress, Grid } from '@mui/material';
+import './Gallery.css';
 
 interface GalleryProps {
   breeds: string[];
@@ -36,14 +37,12 @@ const Gallery: React.FC<GalleryProps> = ({ breeds }) => {
       {loading ? (
         <CircularProgress />
       ) : (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className="gallery">
           {images.map((img, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-              <img
-                src={img}
-                alt="dog"
-                style={{ width: '100%', borderRadius: '8px' }}
-              />
+              <div className="gallery-item">
+                <img src={img} alt="dog" className="gallery-img" />
+              </div>
             </Grid>
           ))}
         </Grid>
