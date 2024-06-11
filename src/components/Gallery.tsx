@@ -29,7 +29,7 @@ const Gallery: React.FC<GalleryProps> = ({ breeds }) => {
           }),
         );
 
-        setImages(allImages.flat());
+        setImages(allImages.flat().reverse());
       } catch (error) {
         console.error('Error fetching images:', error);
       } finally {
