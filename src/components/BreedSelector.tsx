@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Box, Button, CircularProgress, Grid, Typography } from "@mui/material";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Box, Button, CircularProgress, Grid, Typography } from '@mui/material';
 
 interface BreedSelectorProps {
   onSelectBreed: (breeds: string[]) => void;
@@ -14,11 +14,11 @@ const BreedSelector: React.FC<BreedSelectorProps> = ({ onSelectBreed }) => {
   useEffect(() => {
     const fetchBreeds = async () => {
       try {
-        const response = await axios.get("https://dog.ceo/api/breeds/list/all");
+        const response = await axios.get('https://dog.ceo/api/breeds/list/all');
         setBreeds(Object.keys(response.data.message));
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching breeds:", error);
+        console.error('Error fetching breeds:', error);
         setLoading(false);
       }
     };
@@ -48,7 +48,7 @@ const BreedSelector: React.FC<BreedSelectorProps> = ({ onSelectBreed }) => {
             <Grid item key={breed}>
               <Button
                 variant={
-                  selectedBreeds.includes(breed) ? "contained" : "outlined"
+                  selectedBreeds.includes(breed) ? 'contained' : 'outlined'
                 }
                 onClick={() => handleBreedClick(breed)}
               >

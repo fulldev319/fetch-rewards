@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Box, CircularProgress, Grid } from "@mui/material";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Box, CircularProgress, Grid } from '@mui/material';
 
 interface GalleryProps {
   breeds: string[];
@@ -16,10 +16,10 @@ const Gallery: React.FC<GalleryProps> = ({ breeds }) => {
       const allImages = await Promise.all(
         breeds.map(async (breed) => {
           const response = await axios.get(
-            `https://dog.ceo/api/breed/${breed}/images`
+            `https://dog.ceo/api/breed/${breed}/images`,
           );
           return response.data.message;
-        })
+        }),
       );
 
       setImages(allImages.flat());
@@ -42,7 +42,7 @@ const Gallery: React.FC<GalleryProps> = ({ breeds }) => {
               <img
                 src={img}
                 alt="dog"
-                style={{ width: "100%", borderRadius: "8px" }}
+                style={{ width: '100%', borderRadius: '8px' }}
               />
             </Grid>
           ))}

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import BreedSelector from "./components/BreedSelector";
-import Gallery from "./components/Gallery";
-import { Container, CssBaseline, Typography } from "@mui/material";
+import React, { useState } from 'react';
+import BreedSelector from './components/BreedSelector';
+import Gallery from './components/Gallery';
+import { Container, CssBaseline, Typography } from '@mui/material';
 
 const App: React.FC = () => {
   const [selectedBreeds, setSelectedBreeds] = useState<string[]>([]);
